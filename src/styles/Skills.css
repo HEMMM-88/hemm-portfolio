@@ -1,0 +1,309 @@
+.skills {
+  background: #000;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -15%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(229, 9, 20, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  animation: floatGlow 8s ease-in-out infinite;
+}
+
+.skills::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(229, 9, 20, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  animation: floatGlow 10s ease-in-out infinite reverse;
+}
+
+@keyframes floatGlow {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(30px, 30px);
+  }
+}
+
+.skills-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  margin-bottom: 0px;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #fff 0%, #ffffff 50%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background:#e10600;
+  margin: 20px auto 70px;
+  border-radius: 2px;
+  box-shadow: 0 0 25px rgba(229, 9, 20, 0.5);
+}
+
+.carousels-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.carousel-section {
+  position: relative;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.carousel-section:nth-child(1) { animation-delay: 0.2s; }
+.carousel-section:nth-child(2) { animation-delay: 0.4s; }
+.carousel-section:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.carousel-title {
+  font-size: 1.3rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  text-align: left;
+  padding-left: 25px;
+  position: relative;
+}
+
+.carousel-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 25px;
+  background:#e10600;
+  border-radius: 3px;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.6);
+}
+
+.skills-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.skills-carousel::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  background: linear-gradient(90deg, #000 0%, transparent 100%);
+  z-index: 10;
+  pointer-events: none;
+  border-radius: 12px 0 0 12px;
+}
+
+.skills-carousel::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, #000 100%);
+  z-index: 10;
+  pointer-events: none;
+  border-radius: 0 12px 12px 0;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  padding: 25px 0;
+  will-change: transform;
+}
+
+.carousel-track.scroll-left {
+  animation: scrollLeft 45s linear infinite;
+}
+
+.carousel-track.scroll-right {
+  animation: scrollRight 45s linear infinite;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.carousel-item {
+  flex-shrink: 0;
+  padding: 16px 26px;
+  border: 1.5px solid rgba(229, 9, 20, 0.2);
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(229, 9, 20, 0.08) 0%, rgba(0, 0, 0, 0.3) 100%);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.carousel-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+  z-index: 1;
+}
+
+.carousel-item:hover::before {
+  left: 100%;
+}
+
+.carousel-item:hover {
+  background: linear-gradient(135deg, rgba(229, 9, 20, 0.18) 0%, rgba(0, 0, 0, 0.4) 100%);
+  border-color: #e10600;
+  box-shadow: 0 12px 35px rgba(229, 9, 20, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transform: translateY(-6px);
+}
+
+.skill-text {
+  font-size: 0.9rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 800;
+  color: #bbb;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  position: relative;
+  z-index: 2;
+}
+
+.carousel-item:hover .skill-text {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .skills {
+    padding: 80px 15px;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+  }
+
+  .section-title::after {
+    margin: 15px auto 50px;
+    width: 80px;
+  }
+
+  .carousels-wrapper {
+    gap: 30px;
+  }
+
+  .carousel-title {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+
+  .carousel-title::before {
+    width: 4px;
+    height: 20px;
+  }
+
+  .skills-carousel::before,
+  .skills-carousel::after {
+    width: 80px;
+  }
+
+  .carousel-track {
+    gap: 15px;
+    padding: 20px 0;
+    animation: scrollLeft 30s linear infinite !important;
+  }
+
+  .carousel-item {
+    padding: 14px 18px;
+  }
+
+  .skill-text {
+    font-size: 0.8rem;
+  }
+}
