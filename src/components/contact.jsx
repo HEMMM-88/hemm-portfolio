@@ -20,10 +20,10 @@ export default function Contact() {
         tummuruhemanthreddy@gmail.com
         </a>
         <a
-            href="tel:+917842355166"
+            href="tel:+917842344155"
             className="contact-email"
         >
-        +91 7842355166
+        +91 78423 44155
         </a>
     </section>
     </section>
